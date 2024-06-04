@@ -1,7 +1,32 @@
 version: '3'
 
+vars:
+  REPO_DIR: ~/code/tasks
+
 tasks:
+  edit:
+    desc: Edit the Taskfile.yaml in vscode
+    dir: '{{.REPO_DIR}}'
+    cmds:
+      - code Taskfile.yaml
+
+  readme:
+    desc: Edit the README.md in vscode
+    dir: '{{.REPO_DIR}}'
+    cmds:
+      - code README.md
+
+  push:
+    desc: git commit and push changes to Taskfile.yaml and README.md
+    dir: '{{.REPO_DIR}}'
+    cmds:
+      - git add README.md
+      - git add Taskfile.yaml
+      - git commit -m "latest changes"
+      - git push
+
   uds-clean:
+    desc: Delete all .zst files from <pwd> and <pwd>/bundle
     dir: '{{.USER_WORKING_DIR}}'
     cmds:
       - rm *.zst
