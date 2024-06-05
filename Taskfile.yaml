@@ -31,3 +31,9 @@ tasks:
     cmds:
       - rm *.zst
       - rm bundle/*.zst
+
+  lint:
+    desc: lint yaml
+    dir: '{{.USER_WORKING_DIR}}'
+    cmds:
+      - uds run lint:yaml
