@@ -37,3 +37,21 @@ tasks:
     dir: '{{.USER_WORKING_DIR}}'
     cmds:
       - uds run lint:yaml
+
+  chbs:
+    desc: Correct Horse Battery Staple
+    dir: /home/eric/code/psychic-happiness/chbs
+    cmds:
+      - shuf -n 2 words.txt
+
+  doug:
+    desc: Doug
+    dir: '{{.USER_WORKING_DIR}}'    
+    cmds:
+      - uds run setup:create-doug-user
+
+  keycloak:
+    desc: Keycloak Admin Password
+    dir: '{{.USER_WORKING_DIR}}'    
+    cmds:
+      - uds run setup:print-keycloak-admin-password
