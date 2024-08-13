@@ -55,3 +55,18 @@ tasks:
     dir: '{{.USER_WORKING_DIR}}'    
     cmds:
       - uds run setup:print-keycloak-admin-password
+
+  colima-setup:
+    desc: blow away colima and start over
+    dir: '{{.USER_WORKING_DIR}}'
+    cmds:
+      - colima delete uds -f
+      - colima start --cpu 8 --memory 28 --disk 50 --vm-type vz  --vz-rosetta --arch aarch64 --profile uds
+
+      - colima ssh --profile uds 'sudo sysctl -w vm.max_map_count=524288'
+      - colima ssh --profile uds 'sudo sysctl -w fs.file-max=131072'
+
+      - echo "*** Done! Now run the commands below ***"
+      - echo "colima ssh --profile uds"
+      - echo "sudo sysctl -w vm.max_map_count=524288"
+      - echo "sudo sysctl -w fs.file-max=131072"
