@@ -55,5 +55,3 @@ tasks:
     dir: '{{.USER_WORKING_DIR}}'    
     cmds:
       - uds run setup:print-keycloak-admin-password
-
-
