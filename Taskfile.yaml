@@ -46,13 +46,13 @@ tasks:
 
   doug:
     desc: Doug
-    dir: '{{.USER_WORKING_DIR}}'    
+    dir: '{{.REPO_DIR}}'  
     cmds:
-      - uds run setup:create-doug-user
+      - uds run setup:create-doug-user --set KEYCLOAK_GROUP="/UDS Core/Admin"
 
   keycloak:
     desc: Keycloak Admin Password
-    dir: '{{.USER_WORKING_DIR}}'    
+    dir: '{{.REPO_DIR}}' 
     cmds:
       - uds run setup:print-keycloak-admin-password
 
