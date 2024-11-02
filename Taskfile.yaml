@@ -36,13 +36,19 @@ tasks:
     desc: lint yaml
     dir: '{{.USER_WORKING_DIR}}'
     cmds:
-      - uds run lint:yaml
+      - uds run lint:all
 
   chbs:
     desc: Correct Horse Battery Staple
     dir: /home/eric/code/psychic-happiness/chbs
     cmds:
       - shuf -n 2 words.txt
+
+  jwt:
+    desc: "Decode a JWT token"
+    dir: /home/eric/code/psychic-happiness/scripts
+    cmds:
+      - echo "Args {{.CLI_ARGS}}"
 
   doug:
     desc: Doug
@@ -55,6 +61,11 @@ tasks:
     dir: '{{.REPO_DIR}}' 
     cmds:
       - uds run setup:print-keycloak-admin-password
+
+  uuid:
+    desc: Generate a UUID and copy to clipboard
+    cmds:
+      - uuidgen | tr '[:upper:]' '[:lower:]' | tr -d '\n' | pbcopy
 
   colima-setup:
     desc: blow away colima and start over
