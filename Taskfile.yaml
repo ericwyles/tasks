@@ -31,6 +31,7 @@ tasks:
     dir: '{{.USER_WORKING_DIR}}'
     cmds:
       - find . -name "*.zst" | xargs rm 
+      - rm -f oscal-assessment-results.yaml
 
   lint:
     desc: lint yaml
