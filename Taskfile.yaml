@@ -32,6 +32,7 @@ tasks:
     cmds:
       - find . -name "*.zst" | xargs rm 
       - rm -f oscal-assessment-results.yaml
+      - rm -rf zarf-sbom
 
   lint:
     desc: lint yaml
