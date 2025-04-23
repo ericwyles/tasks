@@ -1,7 +1,7 @@
 version: '3'
 
 vars:
-  REPO_DIR: ~/code/tasks
+  REPO_DIR: ~/code/github.com/ericwyles/tasks
 
 tasks:
   edit:
@@ -42,13 +42,13 @@ tasks:
 
   chbs:
     desc: Correct Horse Battery Staple
-    dir: /home/eric/code/psychic-happiness/chbs
+    dir: ~/code/github.com/ericwyles/psychic-happiness/chbs
     cmds:
       - shuf -n 2 words.txt
 
   jwt:
     desc: "Decode a JWT token"
-    dir: /home/eric/code/psychic-happiness/scripts
+    dir: ~/code/github.com/ericwyles/psychic-happiness//scripts
     cmds:
       - echo "Args {{.CLI_ARGS}}"
 
