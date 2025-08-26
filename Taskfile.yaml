@@ -33,6 +33,7 @@ tasks:
       - find . -name "*.zst" | xargs rm 
       - rm -f oscal-assessment-results.yaml
       - rm -rf zarf-sbom
+      - rm -rf .ci_artifacts
 
   lint:
     desc: lint yaml
@@ -44,7 +45,7 @@ tasks:
     desc: Correct Horse Battery Staple
     dir: ~/code/github.com/ericwyles/psychic-happiness/chbs
     cmds:
-      - shuf -n 2 words.txt
+      - shuf -n 15 words.txt
 
   jwt:
     desc: "Decode a JWT token"
